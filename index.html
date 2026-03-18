@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rachel Lee</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --text-primary: #111111;
+      --text-secondary: #555555;
+      --text-muted: #888888;
+      --accent: #1a1a1a;
+      --accent-light: #f4f4f2;
+      --border: #e5e5e5;
+      --bg: #fafaf8;
+      --tag-bg: #efefed;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── Header / Hero ── */
+    header {
+      padding: 5rem 0 3.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-weight: normal;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── Nav dots / section anchor ── */
+    nav {
+      display: flex;
+      gap: 1.75rem;
+      margin-top: 2.5rem;
+    }
+
+    nav a {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--text-primary);
+    }
+
+    /* ── Sections ── */
+    section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    /* ── About ── */
+    .about-text {
+      font-size: 1.08rem;
+      color: var(--text-primary);
+      line-height: 1.85;
+    }
+
+    .about-text p + p {
+      margin-top: 1.25rem;
+    }
+
+    /* ── Expertise ── */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 520px) {
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .expertise-card {
+      background: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+    }
+
+    .expertise-card h3 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.6rem;
+      color: var(--text-primary);
+    }
+
+    .expertise-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ── Skills tags ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tag {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      background: var(--tag-bg);
+      color: var(--text-secondary);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Contact ── */
+    .contact-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      border-bottom: 1px solid var(--text-primary);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .contact-link:hover {
+      color: var(--text-muted);
+      border-color: var(--text-muted);
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Hero -->
+    <header>
+      <p class="eyebrow">Product &middot; Trust &amp; Safety &middot; AI</p>
+      <h1>Rachel Lee</h1>
+      <p class="title">Senior Product Manager &mdash; Amazon</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+      <p class="section-label">About</p>
+      <div class="about-text">
+        <p>
+          Senior Product Manager with 8 years of experience building AI-powered systems to detect
+          bad actors, disrupt adversarial behaviors, and enforce trust and safety at scale across
+          millions of signals.
+        </p>
+        <p>
+          Deep expertise in abuse detection, LLM-powered enforcement, and agentic automation,
+          with a track record of developing innovative solutions to ambiguous, high-stakes abuse
+          problems and translating complex adversarial dynamics into structured product strategy
+          and measurable outcomes.
+        </p>
+        <p>
+          Consistently focused on preserving the product experience for legitimate users, with
+          the technical fluency to partner effectively with ML and engineering teams on systems
+          where the margin for error is low.
+        </p>
+      </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expertise">
+      <p class="section-label">Areas of Expertise</p>
+      <div class="expertise-grid">
+        <div class="expertise-card">
+          <h3>Abuse Detection &amp; Trust &amp; Safety</h3>
+          <p>Designing systems that identify and neutralize bad actors at scale without disrupting legitimate users.</p>
+        </div>
+        <div class="expertise-card">
+          <h3>LLM-Powered Enforcement</h3>
+          <p>Applying large language models to automate enforcement decisions in complex, nuanced abuse scenarios.</p>
+        </div>
+        <div class="expertise-card">
+          <h3>Agentic Automation</h3>
+          <p>Building autonomous pipelines that handle adversarial signals end-to-end with minimal human intervention.</p>
+        </div>
+        <div class="expertise-card">
+          <h3>Adversarial Product Strategy</h3>
+          <p>Translating complex threat landscapes into structured roadmaps with clear, measurable outcomes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <p class="section-label">Skills &amp; Tools</p>
+      <div class="tags">
+        <span class="tag">Product Strategy</span>
+        <span class="tag">Trust &amp; Safety</span>
+        <span class="tag">Abuse Detection</span>
+        <span class="tag">LLMs</span>
+        <span class="tag">Agentic Systems</span>
+        <span class="tag">ML Collaboration</span>
+        <span class="tag">Enforcement Automation</span>
+        <span class="tag">Signal Analysis</span>
+        <span class="tag">Adversarial Dynamics</span>
+        <span class="tag">Roadmapping</span>
+        <span class="tag">Cross-functional Leadership</span>
+        <span class="tag">Amazon</span>
+        <span class="tag">AI/ML Product</span>
+        <span class="tag">Risk &amp; Policy</span>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <p class="section-label">Contact</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:rachel@example.com">Email</a>
+        <a class="contact-link" href="https://linkedin.com/in/rachellee" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="contact-link" href="https://github.com/rachellee" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Rachel Lee</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
