@@ -18,16 +18,13 @@
       --text-primary: #111111;
       --text-secondary: #555555;
       --text-muted: #888888;
-      --accent: #1a1a1a;
       --accent-light: #f4f4f2;
       --border: #e5e5e5;
       --bg: #fafaf8;
       --tag-bg: #efefed;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -37,21 +34,19 @@
       min-height: 100vh;
     }
 
-    /* ── Layout ── */
     .container {
       max-width: 720px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
-    /* ── Header / Hero ── */
+    /* ── Header ── */
     header {
       padding: 5rem 0 3.5rem;
       border-bottom: 1px solid var(--border);
     }
 
     .eyebrow {
-      font-family: 'Inter', sans-serif;
       font-size: 0.75rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -68,22 +63,19 @@
     }
 
     .title {
-      font-family: 'Inter', sans-serif;
       font-size: 1rem;
       color: var(--text-secondary);
       font-weight: 400;
-      letter-spacing: 0.01em;
     }
 
-    /* ── Nav dots / section anchor ── */
     nav {
       display: flex;
       gap: 1.75rem;
       margin-top: 2.5rem;
+      flex-wrap: wrap;
     }
 
     nav a {
-      font-family: 'Inter', sans-serif;
       font-size: 0.82rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -92,9 +84,7 @@
       transition: color 0.2s;
     }
 
-    nav a:hover {
-      color: var(--text-primary);
-    }
+    nav a:hover { color: var(--text-primary); }
 
     /* ── Sections ── */
     section {
@@ -102,12 +92,9 @@
       border-bottom: 1px solid var(--border);
     }
 
-    section:last-of-type {
-      border-bottom: none;
-    }
+    section:last-of-type { border-bottom: none; }
 
     .section-label {
-      font-family: 'Inter', sans-serif;
       font-size: 0.7rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -117,65 +104,146 @@
 
     /* ── About ── */
     .about-text {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       color: var(--text-primary);
       line-height: 1.85;
     }
 
-    .about-text p + p {
-      margin-top: 1.25rem;
+    /* ── Experience ── */
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
     }
 
-    /* ── Expertise ── */
-    .expertise-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+    .experience-item {}
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.2rem;
     }
 
-    @media (max-width: 520px) {
-      .expertise-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .expertise-card {
-      background: var(--accent-light);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.5rem;
-    }
-
-    .expertise-card h3 {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
+    .experience-company {
+      font-size: 0.95rem;
       font-weight: 600;
-      letter-spacing: 0.03em;
-      margin-bottom: 0.6rem;
       color: var(--text-primary);
     }
 
-    .expertise-card p {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.65;
+    .experience-dates {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      white-space: nowrap;
     }
 
-    /* ── Skills tags ── */
-    .tags {
+    .experience-role {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.9rem;
+    }
+
+    .experience-bullets {
+      list-style: none;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 0.6rem;
     }
 
+    .experience-bullets li {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .experience-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--border);
+    }
+
+    /* ── Education ── */
+    .education-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .education-item {}
+
+    .education-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.2rem;
+    }
+
+    .education-school {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .education-dates {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .education-degree {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+
+    .education-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ── Skills ── */
+    .skills-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .skill-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .skill-category {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      width: 80px;
+      flex-shrink: 0;
+      padding-top: 0.35rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
     .tag {
-      font-family: 'Inter', sans-serif;
       font-size: 0.78rem;
       background: var(--tag-bg);
       color: var(--text-secondary);
       border-radius: 4px;
-      padding: 0.35rem 0.75rem;
-      letter-spacing: 0.02em;
+      padding: 0.3rem 0.7rem;
     }
 
     /* ── Contact ── */
@@ -186,7 +254,6 @@
     }
 
     .contact-link {
-      font-family: 'Inter', sans-serif;
       font-size: 0.85rem;
       color: var(--text-primary);
       text-decoration: none;
@@ -207,10 +274,14 @@
     }
 
     footer p {
-      font-family: 'Inter', sans-serif;
       font-size: 0.75rem;
       color: var(--text-muted);
       letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 520px) {
+      .skill-row { flex-direction: column; gap: 0.5rem; }
+      .skill-category { width: auto; }
     }
   </style>
 </head>
@@ -220,12 +291,13 @@
 
     <!-- Hero -->
     <header>
-      <p class="eyebrow">Product &middot; Trust &amp; Safety &middot; AI</p>
+      <p class="eyebrow">Product &middot; AI/ML &middot; Monetization &amp; Growth</p>
       <h1>Rachel Lee</h1>
       <p class="title">Senior Product Manager &mdash; Amazon</p>
       <nav>
         <a href="#about">About</a>
-        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -236,65 +308,129 @@
       <p class="section-label">About</p>
       <div class="about-text">
         <p>
-          Senior Product Manager with 8 years of experience building AI-powered systems to detect
-          bad actors, disrupt adversarial behaviors, and enforce trust and safety at scale across
-          millions of signals.
+          Senior Product Manager with 8+ years shipping AI-powered products at scale, with a growing
+          focus on monetization, growth, and revenue strategy. Proven track record driving product
+          strategy in fast-paced, ambiguous environments — from prototyping LLM and agentic AI systems
+          to scaling production platforms processing millions of signals.
         </p>
-        <p>
-          Deep expertise in abuse detection, LLM-powered enforcement, and agentic automation,
-          with a track record of developing innovative solutions to ambiguous, high-stakes abuse
-          problems and translating complex adversarial dynamics into structured product strategy
-          and measurable outcomes.
-        </p>
-        <p>
-          Consistently focused on preserving the product experience for legitimate users, with
-          the technical fluency to partner effectively with ML and engineering teams on systems
-          where the margin for error is low.
+        <p style="margin-top:1.25rem">
+          Deep experience with pricing and packaging, funnel optimization, user research, and
+          KPI-driven decision-making, combined with the technical fluency to partner closely with
+          engineering, design, and data science teams.
         </p>
       </div>
     </section>
 
-    <!-- Expertise -->
-    <section id="expertise">
-      <p class="section-label">Areas of Expertise</p>
-      <div class="expertise-grid">
-        <div class="expertise-card">
-          <h3>Abuse Detection &amp; Trust &amp; Safety</h3>
-          <p>Designing systems that identify and neutralize bad actors at scale without disrupting legitimate users.</p>
+    <!-- Experience -->
+    <section id="experience">
+      <p class="section-label">Experience</p>
+      <div class="experience-list">
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <span class="experience-company">Amazon</span>
+            <span class="experience-dates">Jan 2024 – Present</span>
+          </div>
+          <p class="experience-role">Senior Product Manager &middot; Customer Trust &amp; Sales &middot; Sunnyvale, CA</p>
+          <ul class="experience-bullets">
+            <li>Led monetization-adjacent strategy for AI-driven abuse detection platform processing 2M+ seller behavioral signals — defined risk-tier segmentation, enforcement thresholds, and human-review workflows; shaped VP-level $5M+ investment decisions and mitigated 35K high-risk selling entities.</li>
+            <li>Drove free-to-engagement funnel design for Seller Assistant AI (Amazon Bedrock) — led 16-person cross-functional team to pioneer LLM-powered enforcement guidance; designed RAG pipelines, prompt engineering standards, and eval frameworks; improved seller resolution speed and accuracy by 25% and customer trust scores by 33%.</li>
+            <li>Owned roadmap and growth KPIs for agentic AI workflow orchestration platform processing 120K+ seller compliance documents annually — automated 30K+ investigation hours and built architecture enabling 3x faster model iteration cycles.</li>
+          </ul>
         </div>
-        <div class="expertise-card">
-          <h3>LLM-Powered Enforcement</h3>
-          <p>Applying large language models to automate enforcement decisions in complex, nuanced abuse scenarios.</p>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <span class="experience-company">Amazon</span>
+            <span class="experience-dates">May 2022 – Aug 2022</span>
+          </div>
+          <p class="experience-role">Senior Product Manager, MBA Intern &middot; Amazon Devices &middot; Seattle, WA</p>
+          <ul class="experience-bullets">
+            <li>Drove pricing and packaging strategy for ML-powered promotions platform managing $2B+ device spend — defined optimization algorithms, pricing constraint logic, and approval workflows; delivered PRD enabling $2M initial investment and phased rollout.</li>
+            <li>Built pricing simulation and forecasting tools using SQL and Python across 500K+ device SKUs; identified 15% margin improvement opportunity through automated pricing, directly informing platform scope.</li>
+          </ul>
         </div>
-        <div class="expertise-card">
-          <h3>Agentic Automation</h3>
-          <p>Building autonomous pipelines that handle adversarial signals end-to-end with minimal human intervention.</p>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <span class="experience-company">Deloitte Consulting</span>
+            <span class="experience-dates">Sep 2017 – Aug 2021</span>
+          </div>
+          <p class="experience-role">Senior Technology Consultant &middot; San Francisco, CA</p>
+          <ul class="experience-bullets">
+            <li>Promoted twice; led cross-functional teams of 15+ across growth and transformation engagements — built and launched AI/ML products including recommendation engines, fraud detection systems, and customer personalization platforms for Fortune 500 clients serving 3M+ users.</li>
+            <li>Led product strategy for enterprise content management platform consolidating 3M+ digital assets for a global telecom client — increased team productivity by 40% and scaled the platform across 5 business units.</li>
+          </ul>
         </div>
-        <div class="expertise-card">
-          <h3>Adversarial Product Strategy</h3>
-          <p>Translating complex threat landscapes into structured roadmaps with clear, measurable outcomes.</p>
+
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <p class="section-label">Education</p>
+      <div class="education-list">
+
+        <div class="education-item">
+          <div class="education-header">
+            <span class="education-school">UC Berkeley, Haas School of Business</span>
+            <span class="education-dates">2021 – 2023</span>
+          </div>
+          <p class="education-degree">Master of Business Administration (Full-Time MBA)</p>
+          <p class="education-note">Consortium Fellow &middot; GSI: AI in Business, Product Management, Pricing in Business</p>
         </div>
+
+        <div class="education-item">
+          <div class="education-header">
+            <span class="education-school">UC Berkeley</span>
+            <span class="education-dates">2013 – 2017</span>
+          </div>
+          <p class="education-degree">B.S. Business Administration &amp; B.A. Asian American Studies</p>
+          <p class="education-note">Dean's Honor List &middot; UC Berkeley Excellence in Leadership Scholarship</p>
+        </div>
+
       </div>
     </section>
 
     <!-- Skills -->
     <section id="skills">
-      <p class="section-label">Skills &amp; Tools</p>
-      <div class="tags">
-        <span class="tag">Product Strategy</span>
-        <span class="tag">Trust &amp; Safety</span>
-        <span class="tag">Abuse Detection</span>
-        <span class="tag">LLMs</span>
-        <span class="tag">Agentic Systems</span>
-        <span class="tag">ML Collaboration</span>
-        <span class="tag">Enforcement Automation</span>
-        <span class="tag">Signal Analysis</span>
-        <span class="tag">Adversarial Dynamics</span>
-        <span class="tag">Roadmapping</span>
-        <span class="tag">Cross-functional Leadership</span>
-        <span class="tag">Amazon</span>
-        <span class="tag">AI/ML Product</span>
-        <span class="tag">Risk &amp; Policy</span>
+      <p class="section-label">Skills</p>
+      <div class="skills-group">
+        <div class="skill-row">
+          <span class="skill-category">Technical</span>
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Data Modeling</span>
+            <span class="tag">A/B Testing</span>
+            <span class="tag">Experiment Design</span>
+            <span class="tag">Forecasting</span>
+            <span class="tag">Model Evaluation &amp; Benchmarking</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">AI / ML</span>
+          <div class="tags">
+            <span class="tag">Generative AI &amp; LLM Systems</span>
+            <span class="tag">Agentic Workflow Orchestration</span>
+            <span class="tag">RAG Pipelines</span>
+            <span class="tag">Prompt Engineering</span>
+            <span class="tag">Human-in-the-Loop Design</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Domain</span>
+          <div class="tags">
+            <span class="tag">Pricing &amp; Packaging</span>
+            <span class="tag">Funnel Optimization</span>
+            <span class="tag">Revenue Growth Strategy</span>
+            <span class="tag">Trust &amp; Safety</span>
+            <span class="tag">Risk &amp; Policy</span>
+            <span class="tag">Responsible AI</span>
+            <span class="tag">Governance Frameworks</span>
+          </div>
+        </div>
       </div>
     </section>
 
