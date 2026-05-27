@@ -6,7 +6,7 @@
   <title>Rachel Lee</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -22,12 +22,13 @@
       --border: #e5e5e5;
       --bg: #fafaf8;
       --tag-bg: #efefed;
+      --accent: #2a5298;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       background: var(--bg);
       color: var(--text-primary);
       line-height: 1.7;
@@ -40,7 +41,7 @@
       padding: 0 2rem;
     }
 
-    /* ── Header ── */
+    /* Header */
     header {
       padding: 5rem 0 3.5rem;
       border-bottom: 1px solid var(--border);
@@ -52,12 +53,14 @@
       text-transform: uppercase;
       color: var(--text-muted);
       margin-bottom: 1.25rem;
+      font-family: 'DM Mono', monospace;
     }
 
     h1 {
+      font-family: 'Playfair Display', serif;
       font-size: clamp(2.4rem, 6vw, 3.6rem);
-      font-weight: 300;
-      letter-spacing: -0.03em;
+      font-weight: 400;
+      letter-spacing: -0.01em;
       line-height: 1.1;
       margin-bottom: 0.75rem;
     }
@@ -82,11 +85,12 @@
       color: var(--text-muted);
       text-decoration: none;
       transition: color 0.2s;
+      font-family: 'DM Mono', monospace;
     }
 
     nav a:hover { color: var(--text-primary); }
 
-    /* ── Sections ── */
+    /* Sections */
     section {
       padding: 4rem 0;
       border-bottom: 1px solid var(--border);
@@ -100,16 +104,17 @@
       text-transform: uppercase;
       color: var(--text-muted);
       margin-bottom: 2rem;
+      font-family: 'DM Mono', monospace;
     }
 
-    /* ── About ── */
+    /* About */
     .about-text {
       font-size: 1.05rem;
       color: var(--text-primary);
       line-height: 1.85;
     }
 
-    /* ── Experience ── */
+    /* Experience */
     .experience-list {
       display: flex;
       flex-direction: column;
@@ -135,6 +140,7 @@
       font-size: 0.78rem;
       color: var(--text-muted);
       white-space: nowrap;
+      font-family: 'DM Mono', monospace;
     }
 
     .experience-role {
@@ -149,29 +155,7 @@
       line-height: 1.65;
     }
 
-    .experience-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .experience-bullets li {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      padding-left: 1.1rem;
-      position: relative;
-    }
-
-    .experience-bullets li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--border);
-    }
-
-    /* ── Education ── */
+    /* Education */
     .education-list {
       display: flex;
       flex-direction: column;
@@ -197,6 +181,7 @@
       font-size: 0.78rem;
       color: var(--text-muted);
       white-space: nowrap;
+      font-family: 'DM Mono', monospace;
     }
 
     .education-degree {
@@ -211,7 +196,7 @@
       font-style: italic;
     }
 
-    /* ── Skills ── */
+    /* Skills */
     .skills-group {
       display: flex;
       flex-direction: column;
@@ -232,6 +217,7 @@
       width: 80px;
       flex-shrink: 0;
       padding-top: 0.35rem;
+      font-family: 'DM Mono', monospace;
     }
 
     .tags {
@@ -248,7 +234,7 @@
       padding: 0.3rem 0.7rem;
     }
 
-    /* ── Contact ── */
+    /* Contact */
     .contact-links {
       display: flex;
       gap: 1.5rem;
@@ -269,7 +255,7 @@
       border-color: var(--text-muted);
     }
 
-    /* ── Footer ── */
+    /* Footer */
     footer {
       padding: 2.5rem 0;
       text-align: center;
@@ -293,7 +279,7 @@
 
     <!-- Hero -->
     <header>
-      <p class="eyebrow">Product &middot; AI/ML &middot; Production AI Operations</p>
+      <p class="eyebrow">Generative AI &middot; Trust &amp; Safety &amp; Information Integrity &middot; AI 0-to-1</p>
       <h1>Rachel Lee</h1>
       <p class="title">Senior Product Manager &mdash; Amazon</p>
       <nav>
@@ -301,6 +287,7 @@
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
+        <a href="#hobbies">Hobbies</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -310,16 +297,19 @@
       <p class="section-label">About</p>
       <div class="about-text">
         <p>
-          Senior Product Manager with 8 years building and operating AI-powered production systems
-          that enable engineers to predict, prevent, diagnose, and resolve issues faster. At Amazon,
-          owned end-to-end operations across systems processing 2M+ behavioral signals and 120K+
-          compliance documents annually — driving 30K+ investigation hours eliminated, 3x faster
-          model iteration, and a 33% improvement in production trust scores.
+          Senior Product Manager with 8 years building AI-powered trust and safety systems from zero
+          to production. At Amazon, launched 0-to-1 enforcement products processing 2M+ behavioral
+          signals and 120K+ compliance documents annually, including a RAG-based AI Seller Assistant
+          and agentic compliance workflows that eliminated 30K+ investigation hours and improved
+          enforcement precision by 33%.
         </p>
         <p style="margin-top:1.25rem">
-          Technical foundation spans LLM systems, agentic workflow orchestration, model reliability,
-          and cloud-scale infrastructure, with a track record of shaping $5M+ investment decisions
-          through working prototypes and production signal data.
+          My work sits at the intersection of information integrity, adversarial behavior, and LLM
+          systems: detecting manipulation at scale, designing human-in-the-loop oversight for
+          high-stakes decisions, and building the infrastructure that lets AI act reliably in
+          ambiguous, contested environments. I bring technical depth in RAG pipelines, eval
+          frameworks, and agentic orchestration alongside a track record of shaping $5M+ investment
+          decisions through working prototypes and production signal data.
         </p>
       </div>
     </section>
@@ -334,8 +324,8 @@
             <span class="experience-company">Amazon</span>
             <span class="experience-dates">Jan 2024 – Present</span>
           </div>
-          <p class="experience-role">Senior Product Manager &middot; Customer Trust &middot; Sunnyvale, CA</p>
-          <p class="experience-summary">Built and operated AI-powered production systems processing 2M+ behavioral signals and 120K+ compliance documents annually — spanning LLM enforcement, agentic automation, and abuse detection — eliminating 30K+ investigation hours and shaping $5M+ in investment decisions.</p>
+          <p class="experience-role">Senior Product Manager &middot; Customer Trust &amp; Sales Abuse Prevention &middot; Sunnyvale, CA</p>
+          <p class="experience-summary">Built and launched 0-to-1 AI-powered enforcement systems for detecting and preventing adversarial seller behavior at scale. Products include a RAG-based AI Seller Assistant (120K+ compliance documents), agentic investigation workflows, and an ML abuse detection platform processing 2M+ behavioral signals annually. Outcomes: 30K+ investigation hours eliminated, 33% improvement in enforcement trust scores, and $5M+ in investment decisions shaped through working prototypes and production data.</p>
         </div>
 
         <div class="experience-item">
@@ -353,7 +343,7 @@
             <span class="experience-dates">Sep 2017 – Aug 2021</span>
           </div>
           <p class="experience-role">Senior Technology Consultant &middot; San Francisco, CA</p>
-          <p class="experience-summary">Built and launched AI/ML products — including recommendation engines, fraud detection systems, and personalization platforms — for Fortune 500 clients serving 3M+ users. Promoted twice in four years.</p>
+          <p class="experience-summary">Built and launched AI/ML products for Fortune 500 clients across ecommerce and marketplace fraud, including fraud detection systems, recommendation engines, and personalization platforms serving 3M+ users. Embedded on trust and abuse prevention programs for two major tech platforms. Promoted twice in four years.</p>
         </div>
 
       </div>
@@ -405,11 +395,12 @@
         <div class="skill-row">
           <span class="skill-category">AI / ML</span>
           <div class="tags">
-            <span class="tag">Generative AI &amp; LLM Systems</span>
+            <span class="tag">LLM Systems</span>
             <span class="tag">Agentic Workflow Orchestration</span>
             <span class="tag">RAG Pipelines</span>
             <span class="tag">Prompt Engineering</span>
-            <span class="tag">Hallucination Detection &amp; Eval Frameworks</span>
+            <span class="tag">Eval Frameworks</span>
+            <span class="tag">Hallucination Detection</span>
             <span class="tag">Human-in-the-Loop Design</span>
             <span class="tag">Inference Reliability</span>
           </div>
@@ -418,12 +409,27 @@
           <span class="skill-category">Domain</span>
           <div class="tags">
             <span class="tag">Trust &amp; Safety</span>
-            <span class="tag">Risk &amp; Policy Analysis</span>
+            <span class="tag">Information Integrity</span>
+            <span class="tag">Adversarial Abuse Detection</span>
             <span class="tag">AI Governance</span>
-            <span class="tag">Production AI Operations</span>
+            <span class="tag">Content Policy</span>
+            <span class="tag">Synthetic Content Detection</span>
             <span class="tag">Responsible AI</span>
+            <span class="tag">Production AI Operations</span>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Hobbies -->
+    <section id="hobbies">
+      <p class="section-label">Beyond Work</p>
+      <div class="tags">
+        <span class="tag">Pilates</span>
+        <span class="tag">F45</span>
+        <span class="tag">Korean Cooking</span>
+        <span class="tag">Traveling</span>
+        <span class="tag">Watching Friends</span>
       </div>
     </section>
 
